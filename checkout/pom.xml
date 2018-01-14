@@ -48,4 +48,26 @@
 			<artifactId>spring-cloud-starter-stream-kafka</artifactId>
 		</dependency>
 	</dependencies>
+    <build>
+    	<plugins>
+			 <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>              
+                <configuration>                         
+    				  <mainClass>io.flowing.retail.checkout.CheckoutApplication</mainClass>
+                </configuration>
+             </plugin>
+	        <plugin>
+	            <groupId>org.springframework.boot</groupId>
+	            <artifactId>spring-boot-maven-plugin</artifactId>
+	            <executions>
+			        <execution>
+			          <goals>
+			            <goal>repackage</goal>
+			          </goals>
+			        </execution>
+			    </executions>
+	        </plugin>
+    	</plugins>
+    </build>	
 </project>
